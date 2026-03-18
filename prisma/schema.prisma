@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String
+
+  roleId    String
+  role      Role     @relation(fields: [roleId], references: [id])
+  
+
+  createdAt DateTime @default(now())
+
+  logs      AuditLog[]
+}
+
+model Role {
+  id    String @id @default(uuid())
+  name  String @unique
+
+  admins Admin[]
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  price       Float
+  status      String
+  imageUrl    String?   // NEW FIELD
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  deletedAt   DateTime?
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  adminId   String
+  admin     Admin    @relation(fields: [adminId], references: [id])
+  createdAt DateTime @default(now())
+}
