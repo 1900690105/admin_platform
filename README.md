@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Full-Stack Admin Dashboard (Production-Level Architecture)
 
-## Getting Started
+A scalable full-stack admin dashboard built using Next.js, implementing real-world backend architecture, caching, background jobs, and real-time updates.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🧠 Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Frontend
+- Next.js (App Router)
+- React
+- TanStack Query (Server State Management)
+- Tailwind CSS
+- React Hot Toast
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Backend
+- Next.js API Routes (Node.js)
+- REST API Design
+- Clean Architecture (Controller → Service → Repository)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Database
+- PostgreSQL
+- Prisma ORM
 
-## Learn More
+### Authentication & Authorization
+- NextAuth.js
+- JWT-based sessions
+- Role-Based Access Control (RBAC)
 
-To learn more about Next.js, take a look at the following resources:
+### Performance & Scaling
+- Redis (Caching Layer)
+- Pagination & Search Optimization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Background Jobs
+- BullMQ (Queue Processing)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### File Storage
+- Cloudinary (Image Upload & CDN)
 
-## Deploy on Vercel
+### Real-Time Features
+- Socket.IO (Live Updates)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Validation
+- Zod (Schema Validation)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚙️ Features
+
+### 🔐 Authentication & Authorization
+- Admin login system
+- Role-based access control (SUPER_ADMIN, ADMIN)
+- Protected API routes with middleware
+
+---
+
+### 📦 Product Management
+- Create, Update, Delete products
+- Image upload via Cloudinary
+- Soft delete support
+- Status management (ACTIVE / INACTIVE)
+
+---
+
+### 🔍 Advanced Data Handling
+- Server-side pagination
+- Search filtering
+- Sorting support
+
+---
+
+### ⚡ Performance Optimization
+- Redis caching for product APIs
+- Cache invalidation strategy
+- Optimized API response times
+
+---
+
+### 🔄 Background Processing
+- Async job queue using BullMQ
+- Event-driven product analytics jobs
+
+---
+
+### 📡 Real-Time Updates
+- Live product updates using Socket.IO
+- Instant UI sync across multiple admin sessions
+
+---
+
+### 🧾 Audit Logging
+- Tracks admin actions:
+  - Product creation
+  - Updates
+  - Deletion
+
+---
+
+## 🏗️ Architecture
